@@ -114,6 +114,8 @@ h3 { font-size: 1.55rem; }
 .gallery-device { width: 72%; margin: 14px auto -34%; overflow: hidden; border: 7px solid #101419; border-radius: 39px; box-shadow: 0 30px 70px rgba(8,27,48,.3); }
 .story-schedule { background: linear-gradient(155deg, #9dd3ff, #52a5ef); }
 .story-notification { background: linear-gradient(155deg, #dae6ef, #91b2ca); }
+.story-notification .gallery-device { height: 430px; margin-bottom: -10px; }
+.story-notification .gallery-device img { width: 100%; height: 100%; object-fit: cover; object-position: center 72%; }
 .story-premium { background: linear-gradient(155deg, #ecebf3, #c8c8d8); }
 
 .support-section { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(50px, 9vw, 120px); align-items: start; }
