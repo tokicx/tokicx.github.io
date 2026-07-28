@@ -28,7 +28,7 @@
     <main class="legal shell">
       <p class="eyebrow"><span></span> Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="legal-date">Effective date: 12 July 2026 · Last updated: 15 July 2026</p>
+      <p class="legal-date">Effective date: 12 July 2026 · Last updated: 28 July 2026</p>
 
       <div class="legal-intro">
         KindMoment is designed around user control and local processing. No
@@ -49,11 +49,21 @@
         <p>Depending on the features you choose to use, KindMoment may process:</p>
         <ul>
           <li>Profile details you enter, such as your name and optional email.</li>
-          <li>Contacts you select after granting contact permission.</li>
-          <li>Calendar events or dates reviewed after granting calendar permission.</li>
           <li>
-            Approximate country, region and city when you explicitly request
-            automatic location detection.
+            The permitted device contact list when you explicitly start an import.
+            KindMoment stores a local copy of up to 2,000 contacts that have a
+            phone number, email address or birthday.
+          </li>
+          <li>
+            Permitted calendar events for the next year when you explicitly start
+            a calendar import. KindMoment keeps only events matching supported
+            birthday or name-day terms.
+          </li>
+          <li>
+            Foreground coordinates when you explicitly request automatic location
+            detection. The device's Apple or Android geocoding provider may process
+            the coordinates once to return an approximate country, region and city.
+            KindMoment retains only that returned place information.
           </li>
           <li>Greeting content, reply text, reminder settings and local history.</li>
           <li>
@@ -61,9 +71,11 @@
             Extension or paste from the clipboard.
           </li>
           <li>
-            Subscription entitlement information provided by Apple through
-            StoreKit. Apple processes payment details; KindMoment does not receive
-            your full payment-card information.
+            Subscription entitlement and transaction status provided by Apple Inc.
+            through the App Store and StoreKit on iOS, or by Google LLC through
+            Google Play and Google Play Billing on Android. The applicable store
+            processes payment details; KindMoment does not receive your full
+            payment-card information.
           </li>
         </ul>
       </section>
@@ -81,7 +93,7 @@
       </section>
 
       <section>
-        <h2>4. Local processing and sharing</h2>
+        <h2>4. Local processing and external services</h2>
         <p>
           Core app data is stored locally on your device. KindMoment does not sell
           personal data and the current version does not use an advertising,
@@ -92,6 +104,21 @@
           a message through another app. The selected receiving platform applies
           its own privacy policy. KindMoment does not guarantee delivery by that
           platform.
+        </p>
+        <p>
+          If you request automatic location detection, foreground coordinates may
+          be processed once by the system geocoding provider supplied by Apple on
+          iOS or by Android, Google or the device manufacturer on Android. That
+          provider may use a network service. KindMoment stores only the returned
+          country, region and city and does not use location for tracking,
+          advertising or analytics.
+        </p>
+        <p>
+          Apple processes iOS purchases and subscription management through the
+          App Store and StoreKit. Google processes Android purchases and
+          subscription management through Google Play and Google Play Billing.
+          KindMoment uses the returned product, purchase and entitlement status
+          only to show, unlock, restore and manage Premium access.
         </p>
       </section>
 
@@ -109,8 +136,9 @@
         <p>
           Contacts, calendar, location and notification permissions are optional
           and requested only when needed for a feature you choose. Location is
-          requested in the foreground and is not continuously tracked. You can
-          revoke permissions at any time in iOS Settings.
+          requested in the foreground only after you choose automatic detection
+          and is not continuously tracked. You can revoke permissions at any time
+          in iOS or Android settings.
         </p>
       </section>
 
