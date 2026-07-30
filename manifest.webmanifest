@@ -1,0 +1,21 @@
+{
+  "name": "KindMoment",
+  "short_name": "KindMoment",
+  "description": "Thoughtful greetings, reliable reminders and privacy-first replies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050b14",
+  "theme_color": "#0b83ff",
+  "icons": [
+    {
+      "src": "/assets/kindmoment-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/kindmoment-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
