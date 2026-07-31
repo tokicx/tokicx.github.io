@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
-<loc>https://tokicx.github.io/</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://tokicx.github.io/" />
-<xhtml:link rel="alternate" hreflang="hr" href="https://tokicx.github.io/hr" />
-<xhtml:link rel="alternate" hreflang="de" href="https://tokicx.github.io/de" />
+<loc>https://kindmoment.app/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindmoment.app/" />
+<xhtml:link rel="alternate" hreflang="hr" href="https://kindmoment.app/hr" />
+<xhtml:link rel="alternate" hreflang="de" href="https://kindmoment.app/de" />
 <changefreq>weekly</changefreq>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://tokicx.github.io/support</loc>
+<loc>https://kindmoment.app/support</loc>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://tokicx.github.io/privacy.html</loc>
+<loc>https://kindmoment.app/privacy.html</loc>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://tokicx.github.io/terms.html</loc>
+<loc>https://kindmoment.app/terms.html</loc>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
