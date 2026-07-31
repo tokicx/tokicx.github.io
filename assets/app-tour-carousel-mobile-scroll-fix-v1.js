@@ -98,7 +98,6 @@ function AppTourCarousel({ locale, slides }) {
                 id: event.pointerId,
                 x: event.clientX,
                 y: event.clientY,
-                pointerType: event.pointerType,
               };
 
               // Capturing a touch pointer immediately can block native vertical
@@ -115,6 +114,10 @@ function AppTourCarousel({ locale, slides }) {
                 return;
               }
 
+              if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+                event.currentTarget.releasePointerCapture(event.pointerId);
+              }
+
               let deltaX = event.clientX - start.x;
               let deltaY = event.clientY - start.y;
               gesture.current = null;
@@ -123,7 +126,7 @@ function AppTourCarousel({ locale, slides }) {
               // Vertical gestures are always left to native page scrolling.
               if (
                 Math.abs(deltaX) < 42 ||
-                Math.abs(deltaX) <= Math.abs(deltaY)
+                Math.abs(deltaX) <= Math.abs(deltaY) * 1.2
               ) {
                 return;
               }
