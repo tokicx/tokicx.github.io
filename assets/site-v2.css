@@ -106,6 +106,8 @@ h2 {
   margin-bottom: 22px;
   font-size: clamp(2.65rem, 4.8vw, 5rem);
   font-weight: 760;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 h3 {
@@ -543,36 +545,66 @@ a.button:hover {
 
 .hero-stage {
   position: relative;
-  min-height: 680px;
+  min-height: 700px;
   isolation: isolate;
 }
 
 .stage-aura {
   position: absolute;
   z-index: -3;
-  inset: 6% -5% 0;
+  inset: 2% -7% 1%;
   border-radius: 52% 48% 46% 54%;
-  background: radial-gradient(circle at 50% 38%, rgba(52, 159, 255, 0.72), rgba(8, 92, 190, 0.4) 42%, rgba(3, 24, 52, 0.08) 72%, transparent 78%);
-  filter: blur(4px);
+  background:
+    radial-gradient(circle at 50% 39%, rgba(35, 147, 255, 0.78), rgba(8, 92, 190, 0.42) 40%, rgba(3, 24, 52, 0.08) 70%, transparent 77%),
+    radial-gradient(circle at 50% 84%, rgba(255, 180, 59, 0.12), transparent 38%);
+  filter: blur(3px);
 }
 
 .stage-platform {
   position: absolute;
   z-index: -1;
-  right: 1%;
-  bottom: 1%;
-  left: 3%;
-  height: 25%;
-  border: 1px solid rgba(98, 183, 255, 0.18);
+  right: 0;
+  bottom: 2%;
+  left: 0;
+  height: 22%;
+  border: 1px solid rgba(255, 180, 59, 0.48);
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(10, 132, 255, 0.24), rgba(4, 29, 61, 0.62) 58%, rgba(2, 8, 20, 0.1) 72%);
-  box-shadow: 0 18px 80px rgba(10, 132, 255, 0.14);
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(255, 190, 76, 0.28), transparent 32%),
+    radial-gradient(ellipse, rgba(10, 132, 255, 0.3), rgba(4, 29, 61, 0.74) 58%, rgba(2, 8, 20, 0.18) 73%);
+  box-shadow:
+    0 0 0 1px rgba(255, 180, 59, 0.08),
+    0 22px 90px rgba(10, 132, 255, 0.2),
+    0 0 48px rgba(255, 180, 59, 0.1);
+}
+
+.stage-platform::before,
+.stage-platform::after {
+  position: absolute;
+  right: 8%;
+  left: 8%;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 197, 103, 0.86), transparent);
+  content: "";
+}
+
+.stage-platform::before {
+  top: 15%;
+  box-shadow: 0 0 18px rgba(255, 180, 59, 0.45);
+}
+
+.stage-platform::after {
+  top: 32%;
+  right: 17%;
+  left: 17%;
+  opacity: 0.42;
 }
 
 .orbit {
   position: absolute;
   z-index: -2;
-  border: 1px solid rgba(111, 192, 255, 0.16);
+  border: 1px solid rgba(111, 192, 255, 0.15);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -589,6 +621,7 @@ a.button:hover {
 
 .orbit-three {
   inset: 30% 10% 5% 1%;
+  border-color: rgba(255, 180, 59, 0.18);
   transform: rotate(4deg);
 }
 
@@ -622,10 +655,13 @@ a.button:hover {
   position: absolute;
   overflow: hidden;
   margin: 0;
-  border: 7px solid #111820;
-  border-radius: 48px;
-  background: #111820;
-  box-shadow: var(--shadow-phone);
+  border: 6px solid #0b1119;
+  border-radius: 43px;
+  background: #0b1119;
+  box-shadow:
+    var(--shadow-phone),
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 34px rgba(10, 132, 255, 0.08);
   transform-origin: 50% 100%;
 }
 
@@ -635,111 +671,36 @@ a.button:hover {
   object-fit: cover;
 }
 
-.phone-ios {
+.phone-schedule {
   z-index: 2;
-  bottom: 8%;
-  left: 5%;
-  width: 41%;
+  bottom: 11%;
+  left: 5.25%;
+  width: 30%;
   aspect-ratio: 851 / 1848;
   transform: rotate(-7deg);
 }
 
-.phone-android {
-  z-index: 4;
-  right: 7%;
-  bottom: 3%;
-  width: 44%;
-  aspect-ratio: 790 / 1515;
-  border-color: #0c1826;
-  transform: rotate(5deg);
+.phone-premium {
+  z-index: 5;
+  bottom: 5%;
+  left: 50%;
+  width: 39%;
+  aspect-ratio: 720 / 1567;
+  border-color: #0d131c;
+  transform: translateX(-50%);
+  box-shadow:
+    0 54px 120px rgba(0, 0, 0, 0.58),
+    0 0 0 1px rgba(255, 192, 86, 0.28),
+    0 0 44px rgba(255, 180, 59, 0.13);
 }
 
-.platform-chip {
-  position: absolute;
-  z-index: 7;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.17);
-  border-radius: 999px;
-  background: rgba(5, 17, 35, 0.78);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.72rem;
-  font-weight: 730;
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.24);
-  backdrop-filter: blur(12px);
-}
-
-.platform-chip::before {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--blue-bright);
-  content: "";
-}
-
-.platform-chip-ios::before {
-  background: var(--gold);
-  box-shadow: 0 0 12px rgba(255, 180, 59, 0.45);
-}
-
-.platform-chip-ios {
-  top: 17%;
-  left: 0;
-}
-
-.platform-chip-android {
-  top: 8%;
-  right: 3%;
-}
-
-.platform-chip-android::before {
-  background: var(--mint);
-}
-
-.privacy-chip {
-  position: absolute;
-  z-index: 9;
-  right: 12%;
-  bottom: 1%;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 222px;
-  padding: 13px 15px;
-  border: 1px solid rgba(255, 255, 255, 0.17);
-  border-radius: 20px;
-  background: rgba(5, 17, 35, 0.82);
-  color: #fff;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.32);
-  backdrop-filter: blur(15px);
-}
-
-.privacy-chip-icon {
-  display: grid;
-  flex: 0 0 37px;
-  width: 37px;
-  height: 37px;
-  place-items: center;
-  border: 1px solid rgba(88, 227, 173, 0.28);
-  border-radius: 12px;
-  background: rgba(88, 227, 173, 0.13);
-  color: var(--mint);
-}
-
-.privacy-chip strong,
-.privacy-chip span {
-  display: block;
-}
-
-.privacy-chip strong {
-  font-size: 0.82rem;
-}
-
-.privacy-chip div > span {
-  color: rgba(255, 255, 255, 0.56);
-  font-size: 0.69rem;
+.phone-reminder {
+  z-index: 3;
+  right: 5.25%;
+  bottom: 10%;
+  width: 30%;
+  aspect-ratio: 853 / 1844;
+  transform: rotate(7deg);
 }
 
 .proof-strip {
@@ -787,13 +748,25 @@ a.button:hover {
   line-height: 1.45;
 }
 
-.story {
+.story.section-width {
+  width: 100%;
+  max-width: none;
+  padding-inline: max(24px, calc((100% - 1220px) / 2));
   background: var(--page);
 }
 
 .section-heading {
-  max-width: 850px;
+  width: 100%;
+  max-width: min(850px, 100%);
+  min-width: 0;
   margin-bottom: clamp(42px, 6vw, 72px);
+}
+
+.section-heading h2 {
+  max-width: 100%;
+  font-size: clamp(2.6rem, 4.55vw, 4.65rem);
+  overflow: visible;
+  text-wrap: balance;
 }
 
 .section-heading > p:last-child {
@@ -1077,39 +1050,47 @@ a.button:hover {
 }
 
 .story-card-2 {
+  grid-template-rows: auto minmax(0, 1fr);
   background: linear-gradient(150deg, #e5f4ff, #f8fbff 66%);
 }
 
 .story-card-2 .story-visual {
   display: grid;
-  min-height: 420px;
+  overflow: hidden;
+  min-height: 390px;
+  height: 390px;
   place-items: end center;
-  padding-bottom: 0;
+  padding: 0 24px;
 }
 
 .story-phone {
   position: relative;
   z-index: 2;
   overflow: hidden;
-  width: min(285px, 72%);
-  margin: 0 auto -20%;
-  border: 7px solid #111820;
-  border-radius: 44px;
+  width: min(198px, 58%);
+  aspect-ratio: 853 / 1844;
+  margin: 0 auto -38px;
+  border: 6px solid #111820;
+  border-radius: 36px;
   background: #111820;
   box-shadow: 0 35px 80px rgba(12, 55, 100, 0.3);
 }
 
 .story-phone img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .story-card-3 {
+  grid-template-rows: auto minmax(0, 1fr);
   background: linear-gradient(150deg, #ffffff, #f4f8fd);
 }
 
 .story-card-3 .story-visual {
   display: grid;
-  align-items: end;
+  place-items: center;
   padding-top: 0;
 }
 
@@ -1465,12 +1446,15 @@ a.button:hover {
   color: var(--blue-bright);
 }
 
-.premium-section {
+.premium-section.section-width {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(430px, 1.08fr);
   align-items: center;
-  gap: clamp(48px, 8vw, 116px);
-  background: var(--page);
+  width: 100%;
+  max-width: none;
+  gap: clamp(42px, 6vw, 92px);
+  padding: clamp(74px, 8vw, 112px) max(24px, calc((100% - 1220px) / 2));
+  background: linear-gradient(180deg, #f6f8fc 0%, #f9fbfe 100%);
 }
 
 .premium-copy > p:not(.eyebrow):not(.premium-note) {
@@ -1506,7 +1490,7 @@ a.button:hover {
 .premium-visual {
   position: relative;
   display: grid;
-  min-height: 560px;
+  min-height: 440px;
   place-items: center;
 }
 
@@ -1520,9 +1504,9 @@ a.button:hover {
 .premium-card {
   position: relative;
   z-index: 2;
-  width: min(470px, 100%);
+  width: min(440px, 100%);
   overflow: hidden;
-  padding: clamp(30px, 5vw, 48px);
+  padding: clamp(28px, 4vw, 40px);
   border: 1px solid rgba(255, 180, 59, 0.34);
   border-radius: 38px;
   background: rgba(255, 255, 255, 0.9);
@@ -1632,7 +1616,7 @@ a.button:hover {
   position: absolute;
   z-index: 3;
   right: -3%;
-  bottom: 9%;
+  bottom: 4%;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0 10px;
@@ -1664,11 +1648,14 @@ a.button:hover {
   font-size: 0.67rem;
 }
 
-.founder-section {
+.founder-section.section-width {
   display: grid;
+  width: 100%;
+  max-width: none;
   justify-items: center;
-  padding-block: clamp(76px, 9vw, 126px);
-  background: #fff;
+  padding: clamp(60px, 6.5vw, 92px) max(24px, calc((100% - 1220px) / 2));
+  border-top: 1px solid rgba(7, 17, 31, 0.06);
+  background: linear-gradient(180deg, #fff 0%, #fbfdff 100%);
   text-align: center;
 }
 
@@ -1682,7 +1669,7 @@ a.button:hover {
 
 .founder-section blockquote {
   max-width: 930px;
-  margin: 22px 0 36px;
+  margin: 14px 0 30px;
   color: #10233b;
   font-size: clamp(1.7rem, 3vw, 3rem);
   font-weight: 650;
@@ -1721,6 +1708,27 @@ a.button:hover {
 .founder-person span {
   color: var(--muted);
   font-size: 0.76rem;
+}
+
+.development-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 760px;
+  margin: 28px 0 0;
+  padding: 13px 17px;
+  border: 1px solid rgba(255, 180, 59, 0.22);
+  border-radius: 16px;
+  background: rgba(255, 180, 59, 0.055);
+  color: #637286;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.development-note span {
+  flex: 0 0 auto;
+  color: var(--gold);
 }
 
 .launch-section {
@@ -1935,6 +1943,15 @@ a.button:hover {
     margin: 30px auto 0;
   }
 
+  .phone-schedule,
+  .phone-reminder {
+    width: 28%;
+  }
+
+  .phone-premium {
+    width: 34%;
+  }
+
   .story-card-1 {
     grid-template-columns: 1fr;
   }
@@ -1959,7 +1976,7 @@ a.button:hover {
     border-bottom: 1px solid var(--line);
   }
 
-  .premium-section {
+  .premium-section.section-width {
     grid-template-columns: 1fr;
   }
 
@@ -1971,6 +1988,13 @@ a.button:hover {
 @media (max-width: 820px) {
   .section-width {
     width: min(100% - 32px, 1220px);
+  }
+
+  .story.section-width,
+  .premium-section.section-width,
+  .founder-section.section-width {
+    width: 100%;
+    padding-inline: 16px;
   }
 
   .topbar {
@@ -1999,7 +2023,7 @@ a.button:hover {
   }
 
   .hero-stage {
-    min-height: 560px;
+    min-height: 600px;
   }
 
   .proof-grid {
@@ -2049,7 +2073,7 @@ a.button:hover {
 
   .story-card-2,
   .story-card-3 {
-    min-height: 670px;
+    min-height: 640px;
   }
 
   .privacy-layout {
@@ -2149,35 +2173,32 @@ a.button:hover {
   }
 
   .hero-stage {
-    min-height: 450px;
+    min-height: clamp(390px, 100vw, 540px);
     margin-top: 20px;
   }
 
   .phone {
-    border-width: 5px;
-    border-radius: 34px;
+    border-width: 4px;
+    border-radius: 28px;
   }
 
-  .phone-ios {
-    left: 1%;
-    width: 49%;
+  .phone-schedule {
+    left: 4%;
+    bottom: 11%;
+    width: 32%;
+    transform: rotate(-6deg);
   }
 
-  .phone-android {
-    right: 1%;
-    width: 52%;
+  .phone-premium {
+    bottom: 4%;
+    width: 39%;
   }
 
-  .platform-chip {
-    display: none;
-  }
-
-  .privacy-chip {
-    right: 5%;
-    bottom: -1%;
-    min-width: 195px;
-    transform: scale(0.9);
-    transform-origin: right bottom;
+  .phone-reminder {
+    right: 4%;
+    bottom: 10%;
+    width: 32%;
+    transform: rotate(6deg);
   }
 
   .proof-grid {
@@ -2217,6 +2238,18 @@ a.button:hover {
     min-height: 610px;
   }
 
+  .story-card-2 .story-visual {
+    min-height: 340px;
+    height: 340px;
+  }
+
+  .story-phone {
+    width: min(172px, 58%);
+    margin-bottom: -34px;
+    border-width: 5px;
+    border-radius: 31px;
+  }
+
   .feature-grid {
     grid-template-columns: 1fr;
   }
@@ -2254,7 +2287,7 @@ a.button:hover {
   }
 
   .premium-visual {
-    min-height: 510px;
+    min-height: 430px;
   }
 
   .premium-card {
@@ -2295,6 +2328,40 @@ a.button:hover {
   .download-card img {
     grid-row: auto;
     margin: 0 0 10px;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 820px) {
+  .hero {
+    min-height: 668px;
+    padding-block: 36px 72px;
+  }
+
+  .hero h1 {
+    margin-bottom: 18px;
+    font-size: clamp(4rem, 6vw, 4.6rem);
+  }
+
+  .hero h1::after {
+    margin-top: 16px;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+    line-height: 1.58;
+  }
+
+  .hero-actions {
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  .hero-trust {
+    margin-top: 18px;
+  }
+
+  .hero-stage {
+    min-height: 560px;
   }
 }
 
